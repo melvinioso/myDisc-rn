@@ -1,23 +1,79 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "App.tsx",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "storybook": "expo start -c --dev --config ./storybook.app.json",
+    "storybook:ios": "expo start --ios --config ./storybook.app.json",
+    "pretty:quick": "pretty-quick --staged",
+    "pretty:all": "prettier --config .prettierrc --write \"**/*.{ts,tsx,js}\""
   },
   "dependencies": {
+    "@expo/config": "^3.3.3",
+    "@expo/vector-icons": "^10.2.1",
+    "@hookform/resolvers": "^0.1.1",
+    "@react-native-community/blur": "^3.6.0",
+    "@react-native-community/datetimepicker": "2.4.0",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-community/netinfo": "5.9.2",
+    "@react-native-community/picker": "1.6.0",
+    "@react-navigation/bottom-tabs": "^5.8.0",
+    "@react-navigation/drawer": "^5.9.0",
+    "@react-navigation/native": "^5.7.3",
+    "@react-navigation/stack": "^5.9.0",
+    "@types/react-native-dotenv": "^0.2.0",
     "expo": "~38.0.8",
     "expo-status-bar": "^1.0.2",
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
+    "react-hook-form": "^6.8.4",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
-    "react-native-web": "~0.11.7"
+    "react-native-dotenv": "^2.4.0",
+    "react-native-gesture-handler": "~1.6.0",
+    "react-native-navigation": "^7.0.0",
+    "react-native-reanimated": "~1.9.0",
+    "react-native-safe-area-context": "~3.0.7",
+    "react-native-screens": "~2.9.0",
+    "react-native-svg": "^12.1.0",
+    "react-native-ui-lib": "^5.14.0",
+    "react-native-web": "~0.11.7",
+    "react-navigation-header-buttons": "^5.0.2",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
-    "babel-preset-expo": "~8.1.0"
+    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-essentials": "^6.0.21",
+    "@storybook/addon-links": "^6.0.21",
+    "@storybook/react-native": "^5.3.21",
+    "@storybook/react-native-server": "^5.3.21",
+    "@types/react": "^16.9.49",
+    "@types/react-native": "^0.63.19",
+    "@types/storybook__react": "^5.2.1",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "babel-preset-expo": "~8.1.0",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "husky": "^4.3.0",
+    "prettier": "^2.1.2",
+    "pretty-quick": "^3.0.2",
+    "react-docgen-typescript-loader": "^3.7.2",
+    "react-is": "^16.13.1",
+    "ts-loader": "^8.0.4",
+    "typescript": "^4.0.3"
   },
-  "private": true
+  "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pretty:quick"
+    }
+  }
 }
